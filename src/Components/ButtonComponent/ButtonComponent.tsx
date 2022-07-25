@@ -12,7 +12,7 @@ export const ButtonComponent:React.FC = () => {
     return (
         <>
             <button onClick={handleOnClik}>
-                click
+                Click here to fetch data
             </button>
         </>
     )

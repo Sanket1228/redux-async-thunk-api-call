@@ -1,5 +1,6 @@
 import React from 'react'
 import { useAppSelector } from '../../store/hooks/appHooks'
+import { List, Todoid, TodoList, TodoTitle } from './TodoList.styled';
 
 const TodoListComponent:React.FC = () => {
 
@@ -9,15 +10,19 @@ const TodoListComponent:React.FC = () => {
         <div>
             {
                 state.list.map((todo) => 
-                    <div key={todo.id}>
-                        {
-                            todo.id
-                        }
-                        :        
-                        {
-                            todo.title
-                        }
-                    </div>
+                    <TodoList key={todo.id}>
+                        <List>
+                           <Todoid>
+                               { todo.id }
+                            </Todoid>
+                            <TodoTitle>
+                                { todo.title }
+                            </TodoTitle>
+                            <Todoid>
+                               { todo.completed }
+                            </Todoid>
+                        </List>
+                    </TodoList>
                 )
             }
         </div>
